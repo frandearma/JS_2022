@@ -1,10 +1,166 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Formulario Curso</title>
+    <link rel="stylesheet" type="text/css" href="libs/DataTables-1.12.1/css/dataTables.bootstrap5.min.css"/>
+    <link rel="stylesheet" type="text/css" href="libs/Bootstrap-5-5.1.3/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="libs/Buttons-2.2.3/css/buttons.bootstrap5.min.css"/>
+
 </head>
 <body>
+<nav class="navbar navbar-dark navbar-expand-lg bg-primary">
+    <a class="navbar-brand" href="#">CURSO JS</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Formulario</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="list-of-inscriptos.html">Listado de Inscriptos</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <main>
+        <div class="py-5 text-center">
+            <img class="d-block mx-auto mb-4"
+                 src="data:image/png;base64,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"
+                 alt="" width="72"
+                 height="57">
+            <h2>Listado Curso</h2>
+            <p class="lead">Este es un listado creado por los alumnos del curso JavaScript 2022.</p>
+        </div>
 
-</body>
+        <div class="row g-6">
+            <div class="col-md-12 col-lg-12">
+                <table id="listOfInscriptos" class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Email</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td> Federico</td>
+                        <td> Asinari</td>
+                        <td> federicoasinari@gmail.com</td>
+                    <tr>
+                        <td> ulises</td>
+                        <td> baretta</td>
+                        <td> ulisessbaretta@gmail.com</td>
+                    <tr>
+                        <td> Camila</td>
+                        <td> Bay</td>
+                        <td> camiibay06@gmail.com</td>
+                    <tr>
+                        <td> Clara</td>
+                        <td> Bernardi</td>
+                        <td> clarubernardi@gmail.com</td>
+                    <tr>
+                        <td> Diego</td>
+                        <td> Bravi</td>
+                        <td> diegobravi97@gmail.com</td>
+                    <tr>
+                        <td> Mariano</td>
+                        <td> Ceballos</td>
+                        <td> marianoceballos8@gmail.com</td>
+                    <tr>
+                        <td> Veronica</td>
+                        <td> Cipolla</td>
+                        <td> veronicacipolla@msn.com</td>
+                    <tr>
+                        <td> Agustin</td>
+                        <td> Dalmasso</td>
+                        <td> agusdalmasso24@gmail.com</td>
+                    <tr>
+                        <td> Gabriel</td>
+                        <td> Fournier</td>
+                        <td> gabuchofournier@gmail.com</td>
+                    <tr>
+                        <td> Lucía</td>
+                        <td> Gonzalez</td>
+                        <td> gonzalez.luchi7@gmail.com</td>
+                    <tr>
+                        <td> julian</td>
+                        <td> habat</td>
+                        <td> julianhabat@gmail.com</td>
+                    <tr>
+                        <td> Adriel</td>
+                        <td> Maranzana</td>
+                        <td> adrielmaranzana@gmail.com</td>
+                    <tr>
+                        <td> Luciano José</td>
+                        <td> Mari</td>
+                        <td> lucianomari85@gmail.com</td>
+                    <tr>
+                        <td> Federico</td>
+                        <td> Mozzi</td>
+                        <td> federicomozzi1@gmail.com</td>
+                    <tr>
+                        <td> benjamin</td>
+                        <td> rubial</td>
+                        <td> benja.rc.2004@gmail.com</td>
+                    <tr>
+                        <td> Francisco</td>
+                        <td> Rupil</td>
+                        <td> franciscorupil@gmail.com</td>
+                    <tr>
+                        <td> Emanuel</td>
+                        <td> Vergara</td>
+                        <td> emanuelver@gmail.com</td>
+                    <tr>
+                        <td> FACUNDO</td>
+                        <td> Castro</td>
+                        <td> facu_castro99@hotmail.com</td>
+                    <tr>
+                        <td> Felipe</td>
+                        <td> Pravisán</td>
+                        <td> felipepravi09@gmail.com</td>
+                    <tr>
+                        <td> Pablo Valentín</td>
+                        <td> Paganoni</td>
+                        <td> pablopaganoni@outlook.com</td>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2022 Curso JS</p>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">Email</a></li>
+            <li class="list-inline-item"><a href="#">GitHub</a></li>
+        </ul>
+    </footer>
+</div>
+
+<script type="text/javascript" src="libs/jQuery-3.6.0/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="libs/Bootstrap-5-5.1.3/js/bootstrap.bundle.min.js"></script>
+
+<script type="text/javascript" src="libs/DataTables-1.12.1/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="libs/DataTables-1.12.1/js/dataTables.bootstrap5.min.js"></script>
+<script type="text/javascript" src="libs/Buttons-2.2.3/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="libs/Responsive-2.3.0/js/dataTables.responsive.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#listOfInscriptos').DataTable(
+            {
+                language: {
+                    url: './libs/DataTables-1.12.1/spanish.json'
+                }
+            }
+        );
+
+    });
+</script>
 </html>

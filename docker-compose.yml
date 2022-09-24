@@ -2,13 +2,13 @@ version: '3.8'
 
 services:
   curso_webserver:
-    image: node:16-alpine
+    image: nginx:1.23-alpine
     container_name: curso_webserver
     restart: unless-stopped
     ports:
       - "8000:80"
     volumes:
-      - .:/var/www/html
+      - ./PROYECT/FRONT:/var/www/html
       - .docker/nginx:/etc/nginx/conf.d
     networks:
       curso-network:
@@ -19,14 +19,14 @@ services:
     ports:
       - 3300:3306
     environment:
-        - MYSQL_DATABASE=db_cursojs
-        - MYSQL_USER=admin
-        - MYSQL_PASSWORD=admin
-        - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=db_cursojs
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=admin
+      - MYSQL_ROOT_PASSWORD=root
     volumes:
-     - mysqldb:/var/lib/mysql
+      - mysqldb:/var/lib/mysql
     networks:
-        curso-network:
+      curso-network:
 
 networks:
   curso-network:
@@ -34,4 +34,4 @@ networks:
     driver: bridge
 
 volumes:
-    mysqldb:
+  mysqldb:
