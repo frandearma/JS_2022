@@ -16,8 +16,12 @@ console.log("Fin do while");
 
 /**** CICLO  FOR  */
 
-for(let contador = 0; contador < 3 ; contador++ ){
-    console.log(contador);
+for(let contador = 0; contador < 10 ; contador++ ){
+   console.log(contador);
+    if(contador == 5){
+        console.log('lo encontre')
+        break;
+   };
 }
 console.log("Fin for");
 
@@ -33,3 +37,4 @@ for(let contador = 0; contador <= 10; contador++){
 }
 /**** FUNCION PARA RANDOM - Ejercicio Moneda */
 console.log(Math.floor(Math.random() * 2));
+

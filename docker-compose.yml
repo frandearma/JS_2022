@@ -17,7 +17,7 @@ services:
     image: mysql:8.0
     container_name: curso_mysql
     ports:
-      - 3300:3306
+      - 3306:3306
     environment:
       - MYSQL_DATABASE=db_cursojs
       - MYSQL_USER=admin

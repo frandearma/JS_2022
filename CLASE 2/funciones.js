@@ -16,16 +16,15 @@ funcionSuma(2, 3);
 
 //Declaración de la función
 function funcionSumar(a, b){
-    return a + b;
+    suma = a + b;
+    return suma
 }
 //Llamando a la función
-let resultado = funcionSumar(2, 3);
+let resultado = funcionSumar(1, 4);
 console.log(resultado);
-
 /**** FUNCION TIPO EXPRESION *******/
 //Declaración Función de tipo Expresión
 let sumar = function (a, b){return a + b};
-
 resultado = sumar(1, 2);
 console.log(resultado);
 
@@ -52,7 +51,7 @@ console.log(resultado);
 
 
 /*******   ACTIVIDAD SUMAR TODO */
-let res = sumarTodo(5, 4, 13, 10, 9, 10, 1);
+let res = sumarTodo(5, 4, 13, 10, 9, 10, 11,23);
 console.log( res );
 
 function sumarTodo(){

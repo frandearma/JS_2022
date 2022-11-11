@@ -9,16 +9,25 @@ let moto = {
     vidaUtil: function(){
         tiempo = 2022 - this.año;
         return Math.floor(this.km/tiempo,)+' KM';
+    },
+    mostrarMarca: function(){
+        txtOut = this.marca + ' '+ this.modelo;
+        return txtOut;
     }
 }
 console.log(moto.vidaUtil());
 console.log(moto.marca);
 console.log(moto.modelo);
 console.log(moto.km);
+console.log(moto.mostrarMarca());
+
 
 /***** CREAR OBJETO DE OTRA FORMA */
 let auto = new Object();
+console.log(auto)
 auto.marca = 'Fiat';
+console.log(auto)
+auto.marca = 'Ford';
 auto.modelo = '127';
 auto.km = 5544342;
 console.log(auto);
@@ -52,7 +61,6 @@ console.log( autoArray );
 // JSON.stringfy
 let autoString = JSON.stringify( auto );
 console.log( autoString );
-
 /**** METODO GET */
 let camion = {
     marca : 'Iveco',
@@ -106,11 +114,10 @@ console.log( autoHonda );
 
 // SE ROMPIO UN CINTURON, ACTUALIZAMOS EL OBJETO
 autoHonda.capacidad = 4;
-
 console.log( autoHonda );
 console.log( motoHonda );
 //FUNCION PARA VER SI PODEMOS VIAJAR TODOS
-console.log(autoHonda.capacidadViaje(3));
+console.log(autoHonda.capacidadViaje(2));
 
 /****** PROTOTYPE */
 //Funcion constructor de objetos de tipo Persona
@@ -128,7 +135,6 @@ Persona.prototype.tel = '3472000000'; //VALOR DEFAULT
 let profesor = new Persona('Francisco', 'De Arma', 'frandearma@gmail.com');
 profesor.tel = '3472506478';
 console.log( profesor );
-
 let estudiante = new Persona('Federico', 'Perez', 'fperez@mail.com');
 estudiante.tel = '3472984523';
 console.log( estudiante.tel );
@@ -155,6 +161,14 @@ let gatoSiames = {
 }
 console.log(gatoSiames);
 console.log(perroLabrador.tipoAnimal.call(gatoSiames,'Galf'));
+let pajaro = {
+    tipo: 'Pajaro',
+    color: 'Azul',
+    peso: '500gr',
+    raza: 'Loro'
+}
+console.log(pajaro)
+console.log(perroLabrador.tipoAnimal.call(pajaro,'Piolin'))
 /**** METDO APPLY */
 let gatoPersa = {
     tipo : 'Gato',
