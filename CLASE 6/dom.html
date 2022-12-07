@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <style>
+        .text-center{
+            text-align: center;
+        }
+        #menuDerecha{
+            text-align: right;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="text-center">
+        <h3>WELCOME A MI SITIO WEB</h3>
+        <p id="p1"></p>
+    </div>
+    <div id="menuDerecha">
+        <h3>ACA VA EL MENU</h3>
+    </div>
+    <input type="number" id="numero" value="">
+    <br>
+    <button id="btn-duplicar" onclick="duplicar()">DUPLICAR</button>
+  </body>
+  <script>
+    // ejecuta esta función cuando se cargue el documento
+    window.onload = function() {
+
+      // crea dinámicamente un par de elementos HTML en una página vacia
+      var heading = document.createElement("h1");
+      var heading_text = document.createTextNode("el texto que desee");
+      heading.appendChild(heading_text);
+      document.body.appendChild(heading);
+      //CAMBIAR UN TEXT DESDE JS
+      document.getElementById("p1").innerHTML = "Estoy agregando texto nuevo";
+      cambiarTexto("Modificamos luego de un tiempo",3000)
+
+      //BOTON BY ID
+      document.getElementById("btn-duplicar").onclick = function(){
+        alert('OK')
+      };
+   }
+
+   function cambiarTexto(texto,tiempo){
+        setTimeout(() => {
+            document.getElementById("p1").innerHTML = texto;
+        }, tiempo)
+      }
+    function duplicar(){
+        let num = document.getElementById('numero').value;
+        let duplicado = num*2;
+        alert('El resultado es '+duplicado)
+        document.getElementById("p1").innerHTML = "Ultimo resultado: "+duplicado;
+        document.getElementById('numero').value = '';
+
+    }
+ </script>
+</html>

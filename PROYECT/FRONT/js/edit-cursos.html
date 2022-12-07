@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Formulario de Curso - Curso JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<nav class="navbar navbar-dark navbar-expand-lg bg-primary">
+    <a class="navbar-brand" href="../index.html">Sistema de Inscripciones</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarCursos" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Cursos
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="../form-cursos.html">Nuevo Curso</a>
+                    <a class="dropdown-item" href="../list-of-cursos.html">Listado de Cursos</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarInscripciones" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Inscripciones
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="../form-inscriptos.html">Nueva Inscripción</a>
+                    <a class="dropdown-item" href="../list-of-inscriptos.html">Listado de Inscriptos</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <main>
+        <div class="py-5 text-center">
+            <img class="d-block mx-auto mb-4"
+                 src="data:image/png;base64,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"
+                 alt="" width="72"
+                 height="57">
+            <h2>Formulario Curso</h2>
+        </div>
+        <div class="row g-6">
+            <div class="col-md-10 col-lg-10">
+                <h4 class="mb-3">Datos del Curso</h4>
+                <form id="form-course" class="needs-validation" novalidate>
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <label for="courseName" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="courseName" placeholder="Nombre del Curso" required>
+                        </div>
+                        <hr class="my-4">
+                        <div class="row g-3">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+                                <button class="w-100 btn btn-danger btn-lg" type="button" onclick="history.back()">Cancelar</button>
+                            </div>
+                            <div class="col-md-4">
+                                <button type="submit" class="w-100 btn btn-primary btn-lg">Editar Curso</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2022 Curso JS</p>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">Email</a></li>
+            <li class="list-inline-item"><a href="#">GitHub</a></li>
+        </ul>
+    </footer>
+</div>
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const courseId = urlParams.get('id')
+
+    fetch('http://localhost:3000/cursos/'+courseId,{
+        method: 'GET'
+    })
+    .then(response => response.json())
+    .then(data => {
+        let course = (data)
+        course['data'].map(function(course) {
+            document.getElementById("courseName").value = course.name
+        })
+    })
+    .catch(function(error){
+        console.log(error);
+    })
+
+    const form = document.getElementById('form-course');
+
+    let data = new FormData(form);
+
+    form.addEventListener("submit", function(event){
+        event.preventDefault();
+        let courseName = form.elements["courseName"].value;
+        if(courseName){
+            let data = JSON.stringify({
+                name: courseName,
+            })
+            fetch('http://localhost:3000/cursos/'+courseId,{
+                method: "PUT",
+                body: data,
+                headers: {"Content-type" : "application/json; charset=UTF-8"}
+            })
+            .then(response => response.json())
+            .then(json => Swal.fire(json.message,'','success'))
+            .then(json => location.reload())
+
+        }else{
+            Swal.fire('Atención','No esta completo el formulario','warning');
+        }
+        document.getElementById('form-course').reset();
+    })
+</script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

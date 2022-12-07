@@ -11,18 +11,30 @@
 </head>
 <body>
 <nav class="navbar navbar-dark navbar-expand-lg bg-primary">
-    <a class="navbar-brand" href="#">CURSO JS</a>
+    <a class="navbar-brand" href="index.html">Sistema de Inscripciones</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="index.html">Formulario</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarCursos" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Cursos
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="form-cursos.html">Nuevo Curso</a>
+                    <a class="dropdown-item" href="list-of-cursos.html">Listado de Cursos</a>
+                </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="list-of-inscriptos.html">Listado de Inscriptos</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarInscripciones" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Inscripciones
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="form-inscriptos.html">Nueva Inscripción</a>
+                    <a class="dropdown-item" href="list-of-inscriptos.html">Listado de Inscriptos</a>
+                </div>
             </li>
         </ul>
     </div>

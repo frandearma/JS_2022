@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .texto-centrado{
+            text-align: center; 
+        }
+        #menuDerecha{    
+        text-align: right;
+        }
+    </style>
+</head>
+<body>
+<div class="texto-centrado">
+    <h1 id="textoPricipal">Hola SitioWeb</h1>
+    <br>
+    <input id="valor" type="number" name="ipt-valor" value="0">
+    <br><br>
+    <button id="duplicar" onclick="duplicar();">
+        DUPLICAR
+    </button>
+    <br><br>
+    <p id="resultado"></p>
+</div>
+<!--
+ACA
+    VA
+        El
+            MENU
+-->
+<div id="menuDerecha">
+    <h3>ACA VA EL MENU</h3>
+</div>
+<script> 
+    window.onload = function() {}
+    function duplicar(){
+        let num = document.getElementById('valor').value;
+        let duplicado = num*2;
+        document.getElementById("textoPricipal").innerHTML = "Ultimo resultado: "+duplicado;
+    }
+</script>
+    
+</body>
+</html>

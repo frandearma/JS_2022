@@ -1,5 +1,10 @@
 version: '3.8'
 
+networks:
+  net_cursojs:
+    name: net_cursojs
+
+    
 services:
   curso_webserver:
     image: nginx:1.23-alpine
@@ -8,10 +13,10 @@ services:
     ports:
       - "8000:80"
     volumes:
-      - ./PROYECT/FRONT:/var/www/html
+      - ./FRONT:/var/www/html
       - .docker/nginx:/etc/nginx/conf.d
     networks:
-      curso-network:
+      net_cursojs:
 
   curso_database:
     image: mysql:8.0
@@ -26,12 +31,21 @@ services:
     volumes:
       - mysqldb:/var/lib/mysql
     networks:
-      curso-network:
-
-networks:
-  curso-network:
-    name: net_cursojs
-    driver: bridge
-
+      net_cursojs:
+  curso_pma:
+    image: phpmyadmin/phpmyadmin:5.2
+    container_name: curso_pma
+    environment:
+      - PMA_HOST=curso_database
+      - PMA_USER=root
+      - PMA_PASSWORD=root
+      - UPLOAD_LIMIT=4048M
+      - UPLOAD_MAX_FILESIZE=512M
+      - MAX_EXECUTION_TIME=38000
+    ports:
+      - "8005:80"
+    networks:
+      net_cursojs:
+        
 volumes:
   mysqldb:
